@@ -1,20 +1,14 @@
-package com.data.mergesort;
+package com.data.sorting;
+
+import com.data.utils.StringUtils;
 
 public class MergeSort {
 
     public static void main(String[] args) {
         int[] array = {10, 8, 1, 89, 85, 974, 895621, 2, 56, 96};
-        System.out.println("Printing array items before sorting");
-        printArray(array);
+        System.out.println("Array before sorting: " + StringUtils.printArray(array));
         mergeSort(array);
-        System.out.println("Printing array items after sorting");
-        printArray(array);
-    }
-
-    private static void printArray(int[] array) {
-        for (int value : array) {
-            System.out.println("array value: " + value);
-        }
+        System.out.println("Array after sorting: " + StringUtils.printArray(array));
     }
 
     private static void mergeSort(int[] array) {
@@ -40,7 +34,6 @@ public class MergeSort {
         mergeSort(leftHalf);
         mergeSort(rightHalf);
         merge(array, leftHalf, rightHalf);
-
     }
 
     private static void merge(int[] array, int[] leftHalf, int[] rightHalf) {
@@ -72,5 +65,4 @@ public class MergeSort {
             k++;
         }
     }
-
 }
